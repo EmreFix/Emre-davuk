@@ -1,0 +1,59 @@
+QBCore = nil
+TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
+
+-- SATMA
+
+RegisterNetEvent("Emre-davuk:kenevirsat")
+AddEventHandler("Emre-davuk:kenevirsat", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    local xItem = xPlayer.Functions.GetItemByName("packaged_chicken").amount
+    
+    if xPlayer.Functions.GetItemByName("packaged_chicken").amount >= 1 then
+        local count = xItem
+        xPlayer.Functions.RemoveItem ("packaged_chicken", count)
+        Citizen.Wait(500)
+        xPlayer.Functions.AddItem("cash" 380 * count) --tane başına 380 dolar veriyor
+    else
+        TriggerClientEvent("QBCore:Notify", source, "Üzerinde Paketlenmiş Davuk Yok!", "error")
+    end
+end)
+
+-- Paketleme
+
+RegisterNetEvent("Emre-davuk:kenevirhap")
+AddEventHandler("Emre-davuk:kenevirhap", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    
+    if xPlayer.Functions.GetItemByName("slaughtered_chicken").amount >= 4 then
+        xPlayer.Functions.RemoveItem ("slaughtered_chicken", 4) 
+        Citizen.Wait(500)
+        xPlayer.Functions.AddItem('packaged_chicken', 1) -- 4 soyulmuşa 1 tane paketlenmiş verir
+    else
+        TriggerClientEvent("QBCore:Notify", source, "Üzerinde Davuk Yok!", "error")
+    end
+end)
+
+-- Tavuk kesme
+
+RegisterNetEvent("Emre-davuk:kenevirisle")
+AddEventHandler("Emre-davuk:kenevirisle", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+    
+    if xPlayer.Functions.GetItemByName("alive_chicken").amount >= 1 then
+        xPlayer.Functions.RemoveItem ("alive_chicken", 1) --1 tavuğa 2 soyulmuş tavuk verir
+        Citizen.Wait(500)
+        xPlayer.Functions.AddItem('slaughtered_chicken', 2) 
+    else
+        TriggerClientEvent("QBCore:Notify", source, "Üzerinde Davuk Yok!", "error")
+    end
+end)
+
+
+
+-- tavuk toplama
+
+RegisterNetEvent("Emre-davuk:kenevirtopla")
+AddEventHandler("Emre-davuk:kenevirtopla", function()
+    local xPlayer = QBCore.Functions.GetPlayer(source)
+        xPlayer.Functions.AddItem ("alive_chicken", 3) --1 toplama 3 verir
+end)
