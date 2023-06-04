@@ -1,0 +1,16 @@
+
+Config = {}
+
+Config.KenevirLokasyon = { 
+    vector3(-66.1088, 6236.716, 31.091) --toptalama lokasyon üst kasabada
+}
+
+Config.Isle = vector3(-78.1592, 6229.460, 31.091)  --işleme aynı yerde
+Config.hap = vector3(-101.877, 6209.036, 31.025)   -- paketlme aynı yerde
+--Config.Sat = vector3(1646.592, 4844.001, 42.013) -- toptancı scripti olduğu için kapalı [eğer sizde yoksa açıp istediğiniz< yere ekleyebilirsiniz]
+
+Config.Blips = {
+    -- {title="Tavuk Toplama", colour=2, id=469, x = 1254.335, y = -1981.85, z = 43.272},
+   -- {title="Tavuk İşleme", colour=2, id=469, x = 2329.019, y = 2571.630, z = 46.687},
+  --  {title="Tavuk Satış", colour=2, id=469, x = 1391.906, y = 3606.021, z = 38.941},
+}
