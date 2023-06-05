@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
             DrawText3Ds(Config.Sat.x, Config.Sat.y, Config.Sat.z + 0.4, '[E] Davuk Sat')
             if dst2 < 1 then
                 if IsControlJustReleased(0, 38) then
-                    kenevirsat()
+                    davuksat()
                 end
             end
         end
@@ -29,11 +29,11 @@ Citizen.CreateThread(function()
     end
 end)
 
-function kenevirsat()
+function davuksat()
     if not satiyormu then
         satiyormu = true
         exports['progressbar']:Progress({
-            name = "kenevirsat",
+            name = "davuksat",
             duration = 8000,
             label = 'Davuk satıyorsun...',
             useWhileDead = false,
@@ -51,7 +51,7 @@ function kenevirsat()
             },
         }, function(cancelled)
             if not cancelled then
-                TriggerServerEvent('Emre-davuk:kenevirsat')
+                TriggerServerEvent('Emre-davuk:davuksat')
                 satiyormu = false
             else
             end
@@ -66,15 +66,15 @@ Citizen.CreateThread(function()
         local sleep = 2000
         local player = PlayerPedId()
         local playercoords = GetEntityCoords(player)
-        local dst = GetDistanceBetweenCoords(playercoords, Config.hap.x, Config.hap.y, Config.hap.z, true)
-        local dst2 = GetDistanceBetweenCoords(playercoords, Config.hap.x, Config.hap.y, Config.hap.z, true)
+        local dst = GetDistanceBetweenCoords(playercoords, Config.pac.x, Config.pac.y, Config.pac.z, true)
+        local dst2 = GetDistanceBetweenCoords(playercoords, Config.pac.x, Config.pac.y, Config.pac.z, true)
         if dst2 < 10 then
             sleep = 2
-            DrawMarker(2, Config.hap.x, Config.hap.y, Config.hap.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.4, 255, 0, 0, 255, 0, 0, 0, 1, 0, 0, 0)
-            DrawText3Ds(Config.hap.x, Config.hap.y, Config.hap.z + 0.4, '[E] Davuk Paketle')
+            DrawMarker(2, Config.pac.x, Config.pac.y, Config.pac.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.4, 255, 0, 0, 255, 0, 0, 0, 1, 0, 0, 0)
+            DrawText3Ds(Config.pac.x, Config.pac.y, Config.pac.z + 0.4, '[E] Davuk Paketle')
             if dst2 < 2 then
                 if IsControlJustReleased(0, 38) then
-                    kenevirhap()
+                    davukpac()
                 end
             end
         end
@@ -82,11 +82,11 @@ Citizen.CreateThread(function()
     end
 end)
 
-function kenevirhap()
+function davukpac()
     if not isliyormu then
         isliyormu = true
         exports['progressbar']:Progress({
-            name = "kenevirhap",
+            name = "davukpac",
             duration = 8000,
             label = 'Davuk isliyorsun...',
             useWhileDead = false,
@@ -104,7 +104,7 @@ function kenevirhap()
             },
         }, function(cancelled)
             if not cancelled then
-                TriggerServerEvent('Emre-davuk:kenevirhap')
+                TriggerServerEvent('Emre-davuk:davukpac')
                 isliyormu = false
             else
             end
@@ -127,7 +127,7 @@ Citizen.CreateThread(function()
             DrawText3Ds(Config.Isle.x, Config.Isle.y, Config.Isle.z + 0.4, '[E] Davuk İşle')
             if dst2 < 2 then
                 if IsControlJustReleased(0, 38) then
-                    kenevirisle()
+                    davukisle()
                 end
             end
         end
@@ -135,11 +135,11 @@ Citizen.CreateThread(function()
     end
 end)
 
-function kenevirisle()
+function davukisle()
     if not isliyormu then
         isliyormu = true
         exports['progressbar']:Progress({
-            name = "kenevirisle",
+            name = "davukisle",
             duration = 8000,
             label = 'Davuk isliyorsun...',
             useWhileDead = false,
@@ -157,7 +157,7 @@ function kenevirisle()
             },
         }, function(cancelled)
             if not cancelled then
-                TriggerServerEvent('Emre-davuk:kenevirisle')
+                TriggerServerEvent('Emre-davuk:davukisle')
                 isliyormu = false
             else
             end
@@ -167,23 +167,23 @@ end
 
 -- TAVUK TOPLAMA
 
-local sonkenevir = 1
+local sondavuk = 1
 
 Citizen.CreateThread(function()
     while true do
         local sleep = 2000
         local player = PlayerPedId()
         local playercoords = GetEntityCoords(player)
-        local dst = GetDistanceBetweenCoords(playercoords, Config.KenevirLokasyon[sonkenevir].x, Config.KenevirLokasyon[sonkenevir].y, Config.KenevirLokasyon[sonkenevir].z, true)
-        local dst2 = GetDistanceBetweenCoords(playercoords, Config.KenevirLokasyon[sonkenevir].x, Config.KenevirLokasyon[sonkenevir].y, Config.KenevirLokasyon[sonkenevir].z, true)
+        local dst = GetDistanceBetweenCoords(playercoords, Config.davukLokasyon[sondavuk].x, Config.davukLokasyon[sondavuk].y, Config.davukLokasyon[sondavuk].z, true)
+        local dst2 = GetDistanceBetweenCoords(playercoords, Config.davukLokasyon[sondavuk].x, Config.davukLokasyon[sondavuk].y, Config.davukLokasyon[sondavuk].z, true)
         if dst2 < 10 then
             sleep = 2
-            DrawMarker(2, Config.KenevirLokasyon[sonkenevir].x, Config.KenevirLokasyon[sonkenevir].y, Config.KenevirLokasyon[sonkenevir].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.4, 255, 0, 0, 255, 0, 0, 0, 1, 0, 0, 0)
-            DrawText3Ds(Config.KenevirLokasyon[sonkenevir].x, Config.KenevirLokasyon[sonkenevir].y, Config.KenevirLokasyon[sonkenevir].z + 0.3, '[E] Davuk Topla')
+            DrawMarker(2, Config.davukLokasyon[sondavuk].x, Config.davukLokasyon[sondavuk].y, Config.davukLokasyon[sondavuk].z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.4, 0.4, 255, 0, 0, 255, 0, 0, 0, 1, 0, 0, 0)
+            DrawText3Ds(Config.davukLokasyon[sondavuk].x, Config.davukLokasyon[sondavuk].y, Config.davukLokasyon[sondavuk].z + 0.3, '[E] Davuk Topla')
             if dst2 < 1 then
                 if IsControlJustReleased(0, 38) then
-                    sonkenevir = math.random(1, #Config.KenevirLokasyon)
-                    kenevirtopla()
+                    sondavuk = math.random(1, #Config.davukLokasyon)
+                    davuktopla()
                 end
             end
         end
@@ -192,11 +192,11 @@ Citizen.CreateThread(function()
 end)
 
 
-function kenevirtopla()
+function davuktopla()
     if not topluyormu then
         topluyormu = true
         exports['progressbar']:Progress({
-            name = "kenevirtopla",
+            name = "davuktopla",
             duration = 12000,
             label = 'Davuk topluyorsun...',
             useWhileDead = false,
@@ -214,7 +214,7 @@ function kenevirtopla()
             },
         }, function(cancelled)
             if not cancelled then
-                TriggerServerEvent('Emre-davuk:kenevirtopla')
+                TriggerServerEvent('Emre-davuk:davuktopla')
                 topluyormu = false
             else
             end
