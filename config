@@ -1,12 +1,12 @@
 
 Config = {}
 
-Config.KenevirLokasyon = { 
+Config.davukLokasyon = { 
     vector3(-66.1088, 6236.716, 31.091) --toptalama lokasyon üst kasabada
 }
 
 Config.Isle = vector3(-78.1592, 6229.460, 31.091)  --işleme aynı yerde
-Config.hap = vector3(-101.877, 6209.036, 31.025)   -- paketlme aynı yerde
+Config.pac = vector3(-101.877, 6209.036, 31.025)   -- paketlme aynı yerde
 --Config.Sat = vector3(1646.592, 4844.001, 42.013) -- toptancı scripti olduğu için kapalı [eğer sizde yoksa açıp istediğiniz< yere ekleyebilirsiniz]
 
 Config.Blips = {
