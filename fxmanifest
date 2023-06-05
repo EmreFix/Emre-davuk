@@ -1,13 +1,17 @@
-Author 'EmreFİX#1881'
+Author 'EmreFix'
 version '1.0.0'
 scriptname 'Emre-davuk'
+
 --{  Bilgiler  }--
 fx_version 'adamant'
+lua54 'yes'
 game 'gta5'
+
 client_scripts {
     "client.lua",
     "config.lua"
 }
+
 server_scripts {
     "server.lua",
     "config.lua"
