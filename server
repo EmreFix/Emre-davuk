@@ -3,8 +3,8 @@ TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
 -- SATMA
 
-RegisterNetEvent("Emre-davuk:kenevirsat")
-AddEventHandler("Emre-davuk:kenevirsat", function()
+RegisterNetEvent("Emre-davuk:davuksat")
+AddEventHandler("Emre-davuk:davuksat", function()
     local xPlayer = QBCore.Functions.GetPlayer(source)
     local xItem = xPlayer.Functions.GetItemByName("packaged_chicken").amount
     
@@ -20,8 +20,8 @@ end)
 
 -- Paketleme
 
-RegisterNetEvent("Emre-davuk:kenevirhap")
-AddEventHandler("Emre-davuk:kenevirhap", function()
+RegisterNetEvent("Emre-davuk:davukpac")
+AddEventHandler("Emre-davuk:davukpac", function()
     local xPlayer = QBCore.Functions.GetPlayer(source)
     
     if xPlayer.Functions.GetItemByName("slaughtered_chicken").amount >= 4 then
@@ -35,8 +35,8 @@ end)
 
 -- Tavuk kesme
 
-RegisterNetEvent("Emre-davuk:kenevirisle")
-AddEventHandler("Emre-davuk:kenevirisle", function()
+RegisterNetEvent("Emre-davuk:davukisle")
+AddEventHandler("Emre-davuk:davukisle", function()
     local xPlayer = QBCore.Functions.GetPlayer(source)
     
     if xPlayer.Functions.GetItemByName("alive_chicken").amount >= 1 then
@@ -52,8 +52,8 @@ end)
 
 -- tavuk toplama
 
-RegisterNetEvent("Emre-davuk:kenevirtopla")
-AddEventHandler("Emre-davuk:kenevirtopla", function()
+RegisterNetEvent("Emre-davuk:davuktopla")
+AddEventHandler("Emre-davuk:davuktopla", function()
     local xPlayer = QBCore.Functions.GetPlayer(source)
         xPlayer.Functions.AddItem ("alive_chicken", 3) --1 toplama 3 verir
 end)
